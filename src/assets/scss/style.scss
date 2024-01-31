@@ -1,0 +1,97 @@
+/* 
+ *  Template Name: TailwindCSS Coming Soon Template
+ *  Author: Javier Montenegro
+ *  Version: 1.0.0
+ *  Created: December 2023
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+@import "wave";
+
+html {
+    @apply relative scroll-smooth;
+}
+
+body {
+    font-size: 15px;
+    @apply font-body overflow-x-hidden text-gray-700;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    @apply font-semibold;
+}
+
+.navbar-show {
+    height: 6rem;
+    opacity: 1;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-top {
+    animation: flip-top 350ms ease-in;
+    transform-origin: bottom;
+}
+
+@keyframes flip-top {
+    100% {
+        transform: rotateX(90deg);
+    }
+}
+
+.flip-card-bottom {
+    animation: flip-bottom 350ms ease-in-out 350ms;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+@keyframes flip-bottom {
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.border-b-solid {
+    border-bottom: solid;
+    @apply border-b-sky-500;
+}
+
+/** Switcher **/
+.label {
+    .ball {
+        transition: transform 0.2s linear;
+        @apply translate-x-0;
+    }
+}
+
+.checkbox:checked + .label .ball {
+    @apply translate-x-6;
+}
+
+/** RTL **/
+html[dir="rtl"]{
+    .tns-inner, .tns-nav, .slider, .slider2, .swiper-slider-hero {
+        direction: ltr !important;
+    }
+
+    .tns-visually-hidden {
+        left: 0 !important;
+        visibility: hidden;
+    }
+}
